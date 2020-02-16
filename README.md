@@ -1,2 +1,2 @@
-# crypto
-Финальный проект на курсе Learn Javascript
+# re-store
+Финальный проект на курсе React + Redux
