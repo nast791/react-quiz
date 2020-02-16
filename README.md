@@ -1,2 +1,2 @@
 # re-store
-Курс React + Redux
+Обучающий курс React + Redux
