@@ -89,8 +89,7 @@ module.exports = {
       filename: "css/main-[hash:4].css"
     }),
     new CopyPlugin([
-      // { from: 'static/css', to: 'css' },
-      // { from: 'static/js', to: 'js' },
+      { from: 'static', to: '' },
     ]),
   ]
 };

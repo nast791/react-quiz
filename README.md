@@ -1,2 +1,2 @@
-# crypto
-Финальный проект на курсе Learn Javascript
+# quiz
+Реакт-приложение
