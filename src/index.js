@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
 
 const app = (
-  <BrowserRouter basename="/react-quiz">
+  <BrowserRouter>
     <App/>
   </BrowserRouter>
 );
