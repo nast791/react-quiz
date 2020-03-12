@@ -10,11 +10,7 @@
 
   <script>
     const base = document.querySelector('base');
-    if (location.hostname == 'localhost') {
-      base.href = '/';
-    } else {
-      base.href = '/react-quiz/';
-    }
+    base.href = (location.hostname == 'localhost') ? '/' : '/react-quiz/';
   </script>
 
   <link rel="apple-touch-icon" href="icons/logo192.png" />
