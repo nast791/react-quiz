@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {App} from './components/App/App';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {BrowserRouter} from "react-router-dom";
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+const app = (
+  <BrowserRouter basename="/react-quiz">
+    <App/>
+  </BrowserRouter>
+);
+
+ReactDOM.render(app, document.getElementById('root'));
 
 serviceWorker.unregister();

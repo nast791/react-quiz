@@ -86,7 +86,7 @@ module.exports = {
       template: "static/index.html"
     }),
     new MiniCssExtractPlugin({
-      filename: "css/main-[hash:4].css"
+      filename: "main-[hash:4].css"
     }),
     new CopyPlugin([
       { from: 'static', to: '' },
