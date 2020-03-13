@@ -8,6 +8,7 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
+  cursor: pointer;
 
   &:focus {
     outline: none;
@@ -18,8 +19,9 @@
   }
 
   &:disabled {
-    background-color: #CCCCCC;
-    cursor: not-allowed;
+    background-color: #CCCCCC !important;
+    color: #000 !important;
+    cursor: not-allowed !important;
   }
 
   &.error {
