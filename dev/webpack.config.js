@@ -10,7 +10,7 @@ module.exports = {
   devServer: {
     port: 8080, // http://localhost:8080/
     historyApiFallback: true,
-    contentBase: './build',
+    // contentBase: './build',
   },
   entry: './src/index.js',
   output: {
