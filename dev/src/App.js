@@ -10,6 +10,7 @@ import QuizCreator from "./containers/QuizCreator/QuizCreator";
 
 class App extends Component {
   render() {
+    console.log(location.hostname)
     return (
       <Layout>
         <Switch>
