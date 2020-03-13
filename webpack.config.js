@@ -10,11 +10,11 @@ module.exports = {
   devServer: {
     port: 8080, // http://localhost:8080/
     historyApiFallback: true,
-    // contentBase: './build',
+    // contentBase: './docs',
   },
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'docs'),
     filename: '[name]-[hash:4].js'
   },
 
@@ -90,12 +90,6 @@ module.exports = {
     }),
     new CopyPlugin([
       { from: 'static', to: '' },
-      { from: 'README.md', to: '' },
-      { from: 'static', to: 'dev/static' },
-      { from: 'src', to: 'dev/src' },
-      { from: '*', to: 'dev' },
-      { from: '.gitignore', to: 'dev' },
-      { from: '.babelrc', to: 'dev' },
     ]),
   ]
 };
