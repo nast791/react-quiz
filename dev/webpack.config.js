@@ -90,6 +90,7 @@ module.exports = {
     }),
     new CopyPlugin([
       { from: 'static', to: '' },
+      { from: 'README.md', to: '' },
       { from: 'static', to: 'dev/static' },
       { from: 'src', to: 'dev/src' },
       { from: '*', to: 'dev' },
