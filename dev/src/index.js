@@ -5,7 +5,8 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
 
 const app = (
-  <BrowserRouter basename={ location.hostname == 'localhost' ? '/' : '/react-quiz' }>
+  // <BrowserRouter basename={ location.hostname == 'localhost' ? '/' : '/react-quiz' }>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <App/>
   </BrowserRouter>
 );
