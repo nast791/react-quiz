@@ -94,6 +94,8 @@ module.exports = {
       { from: 'static', to: 'dev/static' },
       { from: 'src', to: 'dev/src' },
       { from: '*', to: 'dev' },
+      { from: '.gitignore', to: 'dev' },
+      { from: '.babelrc', to: 'dev' },
     ]),
   ]
 };
