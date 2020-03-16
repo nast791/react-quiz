@@ -8,4 +8,8 @@
 .active-quiz__question {
   display: flex;
   justify-content: space-between;
+
+  span {
+    max-width: 480px;
+  }
 }
