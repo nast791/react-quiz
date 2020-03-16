@@ -1,17 +1,13 @@
 import React, {Component} from 'react';
 import './QuizList.scss';
 import {NavLink} from "react-router-dom";
-import axios from '../../axios/axios-quiz';
 import Loader from "../../components/Loader/Loader";
+import {connect} from 'react-redux';
+import {fetchQuizes} from "../../store/actions/quiz";
 
 class QuizList extends Component {
-  state = {
-    quizes: [],
-    loading: true
-  };
-
   renderQuized() {
-    return this.state.quizes.map((item) => {
+    return this.props.quizes.map((item) => {
       return (
         <li key={item.id}>
           <NavLink to={'/quiz/' + item.id}>
@@ -22,25 +18,8 @@ class QuizList extends Component {
     });
   }
 
-  async componentDidMount() {
-    try {
-      const res = await axios.get('/quizes.json');
-
-      const quizes = [];
-      Object.keys(res.data).forEach((item, index) => {
-        quizes.push({
-          id: item,
-          name: `Тест №${index + 1}`
-        })
-      });
-
-      this.setState({
-        quizes,
-        loading: false
-      })
-    } catch (e) {
-      console.log(e);
-    }
+  componentDidMount() {
+    this.props.fetchQuizes();
   }
 
   render() {
@@ -49,7 +28,7 @@ class QuizList extends Component {
         <div>
           <h1>Список тестов</h1>
 
-          { this.state.loading
+          { this.props.loading && this.props.quizes.length !== 0
             ? <Loader/>
             : <ul>
               { this.renderQuized() }
@@ -62,4 +41,17 @@ class QuizList extends Component {
   }
 }
 
-export default QuizList;
+function mapStateToProps(state) {
+  const {quizes, loading, error} = state.quiz;
+  return {
+    quizes, loading, error
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchQuizes: () => dispatch(fetchQuizes())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuizList);
